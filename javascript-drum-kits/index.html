@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div id="notes">
+        <div data-key="81" class="keyz">
+            <kbd>D</kbd>
+            <span class="">DO</span>
+        </div>
+        <div data-key="83" class="keyz">
+            <kbd>R</kbd>
+            <span class="">RE</span>
+        </div>
+        <div data-key="68" class="keyz">
+            <kbd>M</kbd>
+            <span class="">MI</span>
+    </div>
+    <div data-key="70" class="keyz">
+        <kbd>F</kbd>
+        <span class="">FA</span>
+    </div>
+    </div>
+
+    <audio data-key="81" src="asserts/sounds/short-kick-fast-short.wav"></audio>
+    <audio data-key="83" src="asserts/sounds/short-kick-fast-short.wav"></audio>
+    <audio data-key="68" src="asserts/sounds/short-kick-very-short.wav"></audio>
+    <audio data-key="70" src="asserts/sounds/short-tom_A_major.wav"></audio>
+
+
+<script>
+    window.addEventListener('keydown', (e)=>{
+    //console.log(e);
+    //console.log(e.keyCode);
+const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`)
+    console.log(audio);
+
+if(!audio) return; //stop la function de se lancer tous ensemble
+    audio.currentTime = 0;
+    audio.play();
+
+    
+
+  
+    });
+
+</script>
+    
+</body>
+</html>
